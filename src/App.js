@@ -13,7 +13,6 @@ const calculateTimeLeft = () => {
 	const diffDate = parseInt((endYear - curDate) / (24 * 3600 * 1000) + 1);
 
 	if (endYear > curDate && diffDate > 0) {
-		console.log("a");
 		return `Už o ${diffDate} dni nám končí rok 2020,`;
 	} else if (endYear > curDate && diffDate === 0) {
 		return `Už dnes nám končí rok 2020,`;
@@ -40,7 +39,6 @@ function App() {
 	};
 
 	const timeLeft = calculateTimeLeft();
-	console.log(timeLeft);
 	const title = timeLeft;
 	const tips = [
 		"neobyčajný",
