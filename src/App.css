@@ -1,0 +1,40 @@
+#send {
+    margin-top: 50px;
+}
+
+#send-next {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    justify-content: flex-start;
+}
+
+.info {
+    font-size: 14px;
+    margin-bottom: 10px;
+    line-height: 1;
+}
+
+.input-name {
+    margin-top: 10px;
+    border: none;
+    width: 350px;
+    padding: 10px 10px 10px 10px;
+    border-radius: 5px;
+    color: #777c7c;
+    font-size: 14px;
+}
+
+.input-name:focus {
+    outline: none !important;
+}
+
+.right-side {
+    margin-top: 17px;
+}
+
+button.react-share__ShareButton {
+    margin-left: -25px;
+    border-radius: 5px;
+}
