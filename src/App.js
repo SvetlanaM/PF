@@ -56,12 +56,17 @@ function App() {
 
 	const [tip, setTip] = useState("???");
 	const url = window.location.href;
-	let myName = "SVETA";
 	const [from, setFrom] = useState("");
+	const [myName, setName] = useState("Sveta");
 
-	if (url.includes("#")) {
-		myName = url.slice(url.indexOf("#") + 1, url.length).toUpperCase();
-	}
+	const handleShare = () => {
+		if (url.includes("#")) {
+			let tempName = url
+				.slice(url.indexOf("#") + 1, url.length)
+				.toUpperCase();
+			setName(tempName);
+		}
+	};
 
 	const newUrl = url + "#" + from;
 
@@ -69,10 +74,7 @@ function App() {
 		return (
 			<Layout>
 				<OldYearBox title={title} />
-				<MainBox
-					name={myName.length > 1 ? myName : "Sveta"}
-					tip={tip}
-				/>
+				<MainBox name={myName} tip={tip} />
 				<Button
 					label={tip === "???" ? "Generovať" : "Generovať znovu"}
 					onClick={handleClick}>
@@ -95,7 +97,11 @@ function App() {
 							/>
 						</div>
 						<div class="right-side">
-							<SendBox url={newUrl} hashtag="pf2021" />
+							<SendBox
+								url={newUrl}
+								hashtag="pf2021"
+								beforeOnClick={handleShare}
+							/>
 						</div>
 					</div>
 				</section>
