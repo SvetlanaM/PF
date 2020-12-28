@@ -60,7 +60,12 @@ function App() {
 	const [from, setFrom] = useState("");
 
 	if (url.includes("#")) {
-		myName = url.slice(url.indexOf("#") + 1, url.length).toUpperCase();
+		let tempName = url
+			.slice(url.indexOf("#") + 1, url.length)
+			.toUpperCase();
+		if (tempName.length > 1) {
+			myName = tempName;
+		}
 	}
 
 	const newUrl = url + "#" + from;
