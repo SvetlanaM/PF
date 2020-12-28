@@ -69,16 +69,15 @@ function App() {
 
 	let newUrl = baseUrl + "#" + from;
 
-	console.log(newUrl);
+	console.log("new " + url);
 
 	if (url.includes("#")) {
-		let tempName = newUrl
-			.slice(newUrl.indexOf("#") + 1, newUrl.length)
+		let tempName = url
+			.slice(url.indexOf("#") + 1, url.length)
 			.toUpperCase();
-		console.log(tempName);
 		if (tempName === "A57") {
 			myName = "Sveta";
-		} else if (tempName !== " ") {
+		} else if (tempName === " ") {
 			myName = "Sveta";
 		} else {
 			myName = tempName;
