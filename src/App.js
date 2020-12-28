@@ -65,7 +65,7 @@ function App() {
 		myName = url.slice(url.indexOf("#") + 1, url.length).toUpperCase();
 	}
 
-	const newUrl = url + from;
+	const newUrl = url + "#" + from;
 
 	if (timeLeft) {
 		return (
