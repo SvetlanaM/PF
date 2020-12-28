@@ -57,18 +57,33 @@ function App() {
 	const [tip, setTip] = useState("???");
 	const url = window.location.href;
 	const [from, setFrom] = useState("");
-	const [myName, setName] = useState("Sveta");
+	let myName = "Sveta";
 
-	const handleShare = () => {
-		if (url.includes("#")) {
-			let tempName = url
-				.slice(url.indexOf("#") + 1, url.length)
-				.toUpperCase();
-			setName(tempName);
-		}
+	const baseUrl = "https://jovial-neumann-a575be.netlify.app/";
+
+	const onShareWindowClose = () => {
+		//let tempUrl = baseUrl + "#" + from;
+		//setUrl(tempUrl);
+		//console.log("new" + newUrl);
 	};
 
-	const newUrl = url + "#" + from;
+	let newUrl = baseUrl + "#" + from;
+
+	console.log(newUrl);
+
+	if (url.includes("#")) {
+		let tempName = newUrl
+			.slice(newUrl.indexOf("#") + 1, newUrl.length)
+			.toUpperCase();
+		console.log(tempName);
+		if (tempName === "A57") {
+			myName = "Sveta";
+		} else if (tempName !== " ") {
+			myName = "Sveta";
+		} else {
+			myName = tempName;
+		}
+	}
 
 	if (timeLeft) {
 		return (
@@ -100,7 +115,7 @@ function App() {
 							<SendBox
 								url={newUrl}
 								hashtag="pf2021"
-								beforeOnClick={handleShare}
+								onShareWindowClose={onShareWindowClose}
 							/>
 						</div>
 					</div>

@@ -5,7 +5,7 @@ const SendBox = (props) => {
 		<FacebookShareButton
 			url={props.url}
 			quote={props.qoute}
-			beforeOnClick={props.handleShare}
+			onShareWindowClose={props.onShareWindowClose}
 			hashtag="#pf2021">
 			<FacebookIcon size={37} />
 		</FacebookShareButton>
