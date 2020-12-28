@@ -65,6 +65,7 @@ function App() {
 			.toUpperCase();
 		if (tempName.length > 1) {
 			myName = tempName;
+			tempName = "";
 		}
 	}
 
