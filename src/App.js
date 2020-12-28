@@ -60,13 +60,7 @@ function App() {
 	const [from, setFrom] = useState("");
 
 	if (url.includes("#")) {
-		let tempName = url
-			.slice(url.indexOf("#") + 1, url.length)
-			.toUpperCase();
-		if (tempName.length > 1) {
-			myName = tempName;
-			tempName = "";
-		}
+		myName = url.slice(url.indexOf("#") + 1, url.length).toUpperCase();
 	}
 
 	const newUrl = url + "#" + from;
@@ -75,7 +69,10 @@ function App() {
 		return (
 			<Layout>
 				<OldYearBox title={title} />
-				<MainBox name={myName} tip={tip} />
+				<MainBox
+					name={myName.length > 1 ? myName : "Sveta"}
+					tip={tip}
+				/>
 				<Button
 					label={tip === "???" ? "Generovať" : "Generovať znovu"}
 					onClick={handleClick}>
