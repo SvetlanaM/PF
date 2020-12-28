@@ -77,7 +77,7 @@ function App() {
 			.toUpperCase();
 		if (tempName === "A57") {
 			myName = "Sveta";
-		} else if (tempName === " ") {
+		} else if (tempName === " " || tempName === "") {
 			myName = "Sveta";
 		} else {
 			myName = tempName;
