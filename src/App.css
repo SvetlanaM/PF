@@ -19,11 +19,28 @@
 .input-name {
     margin-top: 10px;
     border: none;
-    width: 350px;
+    width: 100%;
     padding: 10px 10px 10px 10px;
     border-radius: 5px;
     color: #777c7c;
-    font-size: 14px;
+    font-size: 8px;
+}
+
+@media (min-width: 1280px) {
+    .input-name {
+        width: 350px;
+        font-size: 14px;
+    }
+}
+
+.left-side {
+    width: 100%;
+}
+
+@media (min-width: 1280px) {
+    .left-side {
+        width: auto;
+    }
 }
 
 .input-name:focus {
@@ -35,6 +52,16 @@
 }
 
 button.react-share__ShareButton {
-    margin-left: -25px;
+    margin-left: 0px;
     border-radius: 5px;
+}
+
+@media (min-width: 1280px) {
+    button.react-share__ShareButton {
+        margin-left: -25px;
+    }
+}
+
+button.react-share__ShareButton:focus {
+    outline: none;
 }
