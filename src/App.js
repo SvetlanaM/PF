@@ -7,6 +7,11 @@ import SendBox from "./components/SendBox";
 import AfterBox from "./components/AfterBox";
 import "./App.css";
 
+const capitalizeName = (text) => {
+	if (typeof text !== "string") return "";
+	return text.charAt(0).toUpperCase() + text.slice(1);
+};
+
 const calculateTimeLeft = () => {
 	let curDate = new Date().getTime();
 	let endYear = new Date("12/31/2020").getTime();
@@ -16,6 +21,8 @@ const calculateTimeLeft = () => {
 		return `Už o ${diffDate} dni nám končí rok 2020,`;
 	} else if (endYear > curDate && diffDate === 0) {
 		return `Už dnes nám končí rok 2020,`;
+	} else if (diffDate === 1) {
+		return `Už o ${diffDate} deň nám končí rok 2020,`;
 	} else if (curDate > endYear) {
 		return 0;
 	}
@@ -72,9 +79,8 @@ function App() {
 	console.log("new " + url);
 
 	if (url.includes("#")) {
-		let tempName = url
-			.slice(url.indexOf("#") + 1, url.length)
-			.toUpperCase();
+		let tempName = url.slice(url.indexOf("#") + 1, url.length);
+		tempName = capitalizeName(tempName);
 		if (tempName === "A57") {
 			myName = "Sveta";
 		} else if (tempName === " " || tempName === "") {
