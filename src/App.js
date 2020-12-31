@@ -19,11 +19,11 @@ const calculateTimeLeft = () => {
 
 	if (endYear > curDate && diffDate > 1) {
 		return `Už o ${diffDate} dni nám končí rok 2020,`;
-	} else if (endYear > curDate && diffDate === 0) {
+	} else if (diffDate === 0) {
 		return `Už dnes nám končí rok 2020,`;
 	} else if (diffDate === 1) {
 		return `Už o ${diffDate} deň nám končí rok 2020,`;
-	} else if (curDate > endYear) {
+	} else if (curDate > endYear && diffDate !== 0) {
 		return 0;
 	}
 };
