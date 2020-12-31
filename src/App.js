@@ -15,7 +15,7 @@ const capitalizeName = (text) => {
 const calculateTimeLeft = () => {
 	let curDate = new Date().getTime();
 	let endYear = new Date("12/31/2020").getTime();
-	const diffDate = parseInt((endYear - curDate) / (24 * 3600 * 1000) + 1);
+	const diffDate = parseInt((endYear - curDate) / (24 * 3600 * 1000));
 
 	if (endYear > curDate && diffDate > 1) {
 		return `Už o ${diffDate} dni nám končí rok 2020,`;
@@ -23,7 +23,7 @@ const calculateTimeLeft = () => {
 		return `Už dnes nám končí rok 2020,`;
 	} else if (diffDate === 1) {
 		return `Už o ${diffDate} deň nám končí rok 2020,`;
-	} else if (curDate > endYear && diffDate !== 0) {
+	} else if (curDate > endYear) {
 		return 0;
 	}
 };
