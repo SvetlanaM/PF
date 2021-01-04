@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 
 import AfterBox from "./components/AfterBox";
 import Button from "./components/Button";
@@ -59,7 +59,7 @@ const generateTitle = () => {
 		: diffDate === 1
 		? `Už o ${diffDate} deň nám končí rok 2020,`
 		: diffDate > 1
-		? `Už o ${diffDate} dni nám končí rok 2020,`
+		? `Už o ${diffDate} dní nám končí rok 2020,`
 		: false;
 };
 
@@ -72,13 +72,15 @@ function App() {
 	const title = generateTitle();
 	const [tip, setTip] = useState("???");
 	const [from, setFrom] = useState("");
+	const nameInput = useRef(null);
 	const newUrl = baseUrl + "?name=" + from;
 
 	// zatial drevorubacske riesenie
 	const getName = () => {
+		const endOfString = fullUrl.indexOf("&");
 		if (fullUrl.includes("?name")) {
 			let tempName = decodeURIComponent(
-				fullUrl.slice(fullUrl.indexOf("?") + 6, fullUrl.length)
+				fullUrl.slice(fullUrl.indexOf("?") + 6, endOfString)
 			);
 			if (tempName === " " || tempName === "") {
 				return capitalizeName(defaultName);
@@ -97,11 +99,14 @@ function App() {
 	const handleChange = (e) => {
 		const newName = e.target.value;
 		setFrom(newName);
-		e.target.value = "";
 	};
 
 	const onShareWindowClose = () => {
-		alert("Tvoja správa bola úspešne nazdieľaná kamarátom. Jupííí.");
+		alert(
+			"Tvoja správa bola úspešne nazdieľaná kamarátom. Možeš zdieľať ďalej pod inými menami (nieže by to malo zmysel :D)"
+		);
+		setFrom("");
+		nameInput.current.focus();
 	};
 
 	if (title) {
@@ -127,6 +132,7 @@ function App() {
 								onChange={handleChange}
 								className="input-name"
 								placeholder="Zadaj svoje meno"
+								ref={nameInput}
 							/>
 						</div>
 						<div className="right-side">
