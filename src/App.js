@@ -28,6 +28,7 @@ const fullUrl = window.location.href;
 let defaultName = "Sveťa";
 const _MS_PER_DAY = 1000 * 60 * 60 * 24;
 const endYear = new Date("01/17/2021");
+const myArr = [];
 
 //bolo by lepsie spravit ako string metodu
 function capitalizeName(text) {
@@ -64,9 +65,11 @@ const generateTitle = () => {
 };
 
 function getRandomYearTip(tips, currentTip) {
-	tips.push(tips.splice(tips.indexOf(currentTip), 1)[0]);
-	const random = Math.floor(Math.random() * (tips.length - 1));
-	return tips[random];
+	myArr.push(currentTip);
+	const diffArr = tips.filter((x) => !myArr.includes(x));
+	//tips.push(tips.splice(tips.indexOf(currentTip), 1)[0]);
+	const random = Math.floor(Math.random() * diffArr.length);
+	return diffArr?.length > 0 ? diffArr[random] : false;
 }
 
 function App() {
@@ -114,11 +117,20 @@ function App() {
 		return (
 			<Layout>
 				<OldYearBox title={title} />
-				<MainBox name={getName()} tip={tip} />
-				<Button
-					className="btn-generate"
-					label={tip === "???" ? "Generovať" : "Generovať znovu"}
-					onClick={handleClick}></Button>
+				<MainBox
+					name={getName()}
+					tip={
+						tip
+							? tip
+							: "záhadný a ani náš generátor ti už nevie poradiť. Nechaj sa prekvapiť."
+					}
+				/>
+				{tip ? (
+					<Button
+						className="btn-generate"
+						label={tip === "???" ? "Generovať" : "Generovať znovu"}
+						onClick={handleClick}></Button>
+				) : null}
 
 				<section id="send">
 					<span className="info">
