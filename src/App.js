@@ -63,8 +63,9 @@ const generateTitle = () => {
 		: false;
 };
 
-function getRandomYearTip(tips) {
-	const random = Math.floor(Math.random() * tips.length);
+function getRandomYearTip(tips, currentTip) {
+	tips.push(tips.splice(tips.indexOf(currentTip), 1)[0]);
+	const random = Math.floor(Math.random() * (tips.length - 1));
 	return tips[random];
 }
 
@@ -93,7 +94,7 @@ function App() {
 	};
 
 	const handleClick = () => {
-		setTip(getRandomYearTip(tips));
+		setTip(getRandomYearTip(tips, tip));
 	};
 
 	const handleChange = (e) => {
