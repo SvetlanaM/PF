@@ -1,3 +1,5 @@
+import React from "react";
+
 import { FacebookShareButton, FacebookIcon } from "react-share";
 
 const SendBox = (props) => {
@@ -6,7 +8,7 @@ const SendBox = (props) => {
 			url={props.url}
 			quote={props.qoute}
 			onShareWindowClose={props.onShareWindowClose}
-			hashtag="#pf2021">
+			hashtag={props.hashtag}>
 			<FacebookIcon size={37} />
 		</FacebookShareButton>
 	);

@@ -10,16 +10,16 @@
     cursor: pointer;
 }
 
-@media (min-width: 768px) {
-    .btn-generate {
-        font-size: 20px;
-    }
-}
-
 .btn-generate:focus {
-    outline: none !important;
+    outline: none;
 }
 
 .btn-generate:hover {
     background: #07a4aa;
+}
+
+@media (min-width: 768px) {
+    .btn-generate {
+        font-size: 20px;
+    }
 }
