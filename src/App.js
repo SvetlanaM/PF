@@ -36,8 +36,8 @@ function capitalizeName(text) {
 	return text.charAt(0).toUpperCase() + text.slice(1);
 }
 
+const curDate = new Date();
 const convertToDays = () => {
-	const curDate = new Date();
 	const utc1 = Date.UTC(
 		curDate.getFullYear(),
 		curDate.getMonth(),
