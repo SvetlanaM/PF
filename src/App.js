@@ -1,5 +1,4 @@
 import React, { useState, useRef } from "react";
-
 import AfterBox from "./components/AfterBox";
 import Button from "./components/Button";
 import Layout from "./components/Layout";
@@ -35,6 +34,7 @@ function capitalizeName(text) {
 	if (typeof text !== "string") return "";
 	return text.charAt(0).toUpperCase() + text.slice(1);
 }
+
 
 const curDate = new Date();
 const convertToDays = () => {
@@ -119,6 +119,7 @@ function App() {
 				<OldYearBox title={title} />
 				<MainBox
 					name={getName()}
+					year={curDate.getFullYear()+1}
 					tip={
 						tip
 							? tip
@@ -149,9 +150,9 @@ function App() {
 							/>
 						</div>
 						<div className="right-side">
-							<SendBox
+						<SendBox
 								url={newUrl}
-								hashtag="#pf2021"
+								hashtag={`#pffrom${from}`}
 								onShareWindowClose={onShareWindowClose}
 							/>
 						</div>

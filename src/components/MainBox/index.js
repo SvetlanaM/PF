@@ -6,7 +6,7 @@ const MainBox = (props) => {
 		<div className="main-box">
 			<h1 className="main-title">
 				a {props.name} Ti praje do nového roku mnoho elánu a sily. Tvoj
-				rok 2021 bude
+				rok {props.year} bude
 			</h1>
 			<p className="main-answer">{props.tip}</p>
 		</div>
