@@ -27,7 +27,7 @@ const baseUrl = window.location.origin;
 const fullUrl = window.location.href;
 let defaultName = "Sveťa";
 const _MS_PER_DAY = 1000 * 60 * 60 * 24;
-const endYear = new Date("01/17/2021");
+const endYear = new Date(new Date().getFullYear(), 11, 31);
 const myArr = [];
 
 //bolo by lepsie spravit ako string metodu
@@ -56,11 +56,11 @@ const generateTitle = () => {
 
 	// dalo by sa riesit ovela lepsie, nejakym mapovacim slovnikom asi
 	return diffDate === 0
-		? `Už dnes nám končí rok 2020,`
+		? `Už dnes nám končí rok ${curDate.getFullYear()},`
 		: diffDate === 1
-		? `Už o ${diffDate} deň nám končí rok 2020,`
+		? `Už o ${diffDate} deň nám končí rok ${curDate.getFullYear()},`
 		: diffDate > 1
-		? `Už o ${diffDate} dní nám končí rok 2020,`
+		? `Už o ${diffDate} dní nám končí rok ${curDate.getFullYear()},`
 		: false;
 };
 
