@@ -4,10 +4,10 @@ import Layout from './components/Layout'
 import MainBox from './components/MainBox'
 import OldYearBox from './components/OldYearBox'
 import './App.css'
-import { generateTitle, getName, getRandomYearTip } from './utils/helpers'
+import { generateTitle, getName } from './utils/helpers'
 import { useTip } from './hooks/useTip'
 import { useFrom } from './hooks/useFrom'
-import { baseUrl, curDate, tips } from './utils/Constants'
+import { baseUrl, curDate } from './utils/Constants'
 import SideGrid from './components/SideGrid'
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
   const newUrl = baseUrl + '?name=' + from
 
   const handleClick = () => {
-    setTip(getRandomYearTip(tips, tip))
+    setTip(tip)
   }
 
   const handleChange = (e) => {

@@ -1,6 +1,13 @@
-import { useState } from "react";
+import { useState } from 'react'
+import { tips } from '../utils/Constants'
 
 export const useTip = (curTip) => {
-    const [tip, setTip] = useState(curTip);
-    return [tip, setTip]
+  const [tip, setTip] = useState(curTip)
+  const myArr = []
+
+  myArr.push(tip)
+  const diffArr = tips.filter((x) => !myArr.includes(x))
+  const random = Math.floor(Math.random() * diffArr.length)
+
+  return [diffArr?.length > 0 ? diffArr[random] : null, setTip]
 }
