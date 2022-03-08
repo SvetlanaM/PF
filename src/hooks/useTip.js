@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { tips } from '../utils/Constants'
 
+const myArr = []
 export const useTip = (curTip) => {
   const [tip, setTip] = useState(curTip)
-  const myArr = []
 
   myArr.push(tip)
   const diffArr = tips.filter((x) => !myArr.includes(x))
