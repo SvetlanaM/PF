@@ -7,7 +7,7 @@ import './App.css'
 import { generateTitle, getName } from './utils/helpers'
 import { useTip } from './hooks/useTip'
 import { useFrom } from './hooks/useFrom'
-import { baseUrl, curDate } from './utils/Constants'
+import { BASE_URL, CURRENT_DATE } from './utils/Constants'
 import SideGrid from './components/SideGrid'
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
 
   const title = generateTitle()
   const nameInput = useRef(null)
-  const newUrl = baseUrl + '?name=' + from
+  const newUrl = BASE_URL + '?name=' + from
 
   const handleClick = () => {
     setTip(tip)
@@ -40,7 +40,7 @@ function App() {
         <OldYearBox title={title} />
         <MainBox
           name={getName()}
-          year={curDate.getFullYear() + 1}
+          year={CURRENT_DATE.getFullYear() + 1}
           tip={
             tip
               ? tip

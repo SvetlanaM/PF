@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState } from 'react'
 
 export const useFrom = (name) => {
-	const [from, setFrom] = useState(name);
-	return [from, setFrom]
+  const [from, setFrom] = useState(name)
+  return [from, setFrom]
 }
