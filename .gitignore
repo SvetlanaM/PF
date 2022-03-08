@@ -12,6 +12,7 @@
 /build
 
 /.vscode 
+.vscode
 
 # misc
 .DS_Store
@@ -26,3 +27,4 @@ yarn-error.log*
 
 .eslintcache
 .eslintrc.json
+
