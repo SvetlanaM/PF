@@ -12,7 +12,7 @@ import SideGrid from './components/SideGrid'
 
 function App() {
   const [from, setFrom] = useFrom('')
-  const [tip, setTip] = useTip(getRandomYearTip(tips, '???'))
+  const [tip, setTip] = useTip('???')
 
   const title = generateTitle()
   const nameInput = useRef(null)
