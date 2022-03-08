@@ -9,17 +9,17 @@ import { generateTitle, getName, getRandomYearTip } from './utils/helpers';
 import { useTip } from './hooks/useTip';
 import { useFrom } from './hooks/useFrom';
 import { baseUrl, curDate, tips } from './utils/Constants';
-
+import SideGrid from './components/SideGrid';
 
 function App() {
 	const title = generateTitle();
 	const nameInput = useRef(null);
-	const [from, setFrom] = useFrom("")
-	const [tip, setTip] = useTip(getRandomYearTip(tips, "???"))
+	const [from, setFrom] = useFrom('');
+	const [tip, setTip] = useTip(getRandomYearTip(tips, '???'));
 	const newUrl = baseUrl + '?name=' + from;
 
 	const handleClick = () => {
-		setTip(getRandomYearTip(tips, tip))
+		setTip(getRandomYearTip(tips, tip));
 	};
 
 	const handleChange = (e) => {
@@ -60,7 +60,7 @@ function App() {
 						Facebooku :)
 					</span>
 					<div id='send-next'>
-						<div className='left-side'>
+						<SideGrid className='left-side'>
 							<input
 								type='text'
 								value={from}
@@ -69,14 +69,14 @@ function App() {
 								placeholder='Zadaj svoje meno'
 								ref={nameInput}
 							/>
-						</div>
-						<div className='right-side'>
+						</SideGrid>
+						<SideGrid className='right-side'>
 							<SendBox
 								url={newUrl}
 								hashtag={`#pffrom${from}`}
 								onShareWindowClose={onShareWindowClose}
 							/>
-						</div>
+						</SideGrid>
 					</div>
 				</section>
 			</Layout>
