@@ -28,11 +28,11 @@ export const convertToDays = () => {
 export const generateTitle = () => {
   const diffDate = convertToDays()
   return diffDate === 0
-    ? `Už dnes nám končí rok ${CURRENT_DATE.getFullYear()},`
+    ? `Today is the end of the ${CURRENT_DATE.getFullYear()} year,`
     : diffDate === 1
-    ? `Už o ${diffDate} deň nám končí rok ${CURRENT_DATE.getFullYear()},`
+    ? `The year ${CURRENT_DATE.getFullYear()} ends in a ${diffDate} day,`
     : diffDate > 1
-    ? `Už o ${diffDate} dní nám končí rok ${CURRENT_DATE.getFullYear()},`
+    ? `The year ${CURRENT_DATE.getFullYear()} ends in ${diffDate} days,`
     : false
 }
 

@@ -28,7 +28,7 @@ function App() {
 
   const onShareWindowClose = () => {
     alert(
-      'Tvoja správa bola úspešne nazdieľaná kamarátom. Možeš zdieľať ďalej pod inými menami (nieže by to malo zmysel :D)'
+      'Your message has been successfully shared with a friend. You can share other ones with different names (but that would not make sense :D)'
     )
     setFrom('')
     nameInput.current.focus()
@@ -44,13 +44,13 @@ function App() {
           tip={
             tip
               ? tip
-              : 'záhadný a ani náš generátor ti už nevie poradiť. Nechaj sa prekvapiť.'
+              : 'mysterious and even our generator can no longer advise you. Let yourself be surprised.'
           }
         />
         {tip ? (
           <Button
             className="btn-generate"
-            label={tip === '???' ? 'Generovať' : 'Generovať znovu'}
+            label={tip === '???' ? 'Generate' : 'Generate again'}
             onClick={handleClick}
           ></Button>
         ) : null}

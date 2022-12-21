@@ -5,8 +5,8 @@ const MainBox = (props) => {
   return (
     <div className="main-box">
       <h1 className="main-title">
-        a {props.name} Ti praje do nového roku mnoho elánu a sily. Tvoj rok{' '}
-        {props.year} bude
+        and {props.name} wish you to the New Year a lot of good mood a strength.
+        Your next year {props.year} will be
       </h1>
       <p className="main-answer">{props.tip}</p>
     </div>

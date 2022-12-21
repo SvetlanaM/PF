@@ -10,8 +10,8 @@ const SideGrid = ({
   return (
     <section id="send">
       <span className="info">
-        Napíš svoje meno a zdieľaj personalizované PFko pre kamarátov na
-        Facebooku :)
+        Write your name and share personalised PF for your friends on Facebook
+        :)
       </span>
       <div id="send-next">
         <div className="left-side">

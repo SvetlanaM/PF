@@ -1,15 +1,12 @@
 export const TIPS = [
-  'neobyčajný',
-  'jedinečný',
-  'plný zážitkov',
-  'precestovaný',
-  'covid negatívny',
-  'nejasný',
-  'zamilovaný',
-  'prekódený od rána do večera',
-  'plný nových výziev',
-  'stresujúci',
-  'oddychový',
+  'unique',
+  'full of love',
+  'full of new experiences',
+  'travelled',
+  'insecure',
+  'full of programming - all days, all nights',
+  'full of new challenges',
+  'relaxing',
 ]
 export const BASE_URL = window.location.origin
 export const FULL_URL = window.location.href
